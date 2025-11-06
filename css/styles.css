@@ -1,0 +1,134 @@
+/* CSS Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  /* Отключает меню на iOS */
+  -webkit-user-select: none;
+  /* Отключает выделение в Safari/Chrome */
+  user-select: none;
+  /* Стандартное отключение выделения */
+}
+
+/* Basic Document Setting */
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #aae url(../img/background.jpg);
+  background-size: cover;
+}
+
+/* Calculator Container */
+.calculator {
+  width: 320px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Top section with screen and clear button */
+.top {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+
+/* Clear button */
+.clear {
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.clear:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.clear:active {
+  transform: translateY(0);
+}
+
+/* Screen display */
+.screen {
+  flex: 1;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: white;
+  font-size: 2rem;
+  font-weight: 300;
+  overflow: hidden;
+}
+
+/* Keys grid */
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Base button styles */
+.keys button {
+  height: 60px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keys button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.keys button:active {
+  transform: translateY(0);
+}
+
+/* Remove default focus outline */
+.keys button:focus,
+.clear:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
+/* Add custom focus styles for accessibility */
+.keys button:focus-visible,
+.clear:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+}
+
